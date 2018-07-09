@@ -33,10 +33,8 @@ watermelonOutput = data[['好瓜']].values
 watermelonOutput[:, 0] = dataTransfor.fit_transform(watermelonOutput[:, 0])
 watermelonY = OneHotEncoder(categorical_features=[0], sparse=False).fit_transform(watermelonOutput)
 
-
 # 划分数据为训练集合验证集
 X_train, X_test, y_train, y_test = model_selection.train_test_split(watermelonX, watermelonY, test_size = 0.4)
-print("y_test", y_test)
 
 
 # 训练数据，得到决策树
@@ -45,7 +43,6 @@ clf.fit(X_train, y_train)
 
 # 拟合验证集
 y_pred = clf.predict(X_test)
-print("y_pred", y_pred)
 
 #计算均方差
 print("MSE",metrics.mean_squared_error(y_test, y_pred))
