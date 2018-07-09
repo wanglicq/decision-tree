@@ -1,0 +1,5 @@
+类别数据(字符串)而不是数字数据--
+sklearn.preprocessing的LabelEncoder把字符转化为整型
+
+离散型数据--
+独热编码
