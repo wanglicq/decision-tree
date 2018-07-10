@@ -25,8 +25,8 @@ watermelonCharactor[:, 5] = dataTransfor.fit_transform(watermelonCharactor[:, 5]
 watermelonCharactor[:, 6] = dataTransfor.fit_transform(watermelonCharactor[:, 6])
 watermelonCharactor[:, 7] = dataTransfor.fit_transform(watermelonCharactor[:, 7])
 #数据特性进行独热编码
-watermelonX = OneHotEncoder(sparse=False).fit_transform(watermelonCharactor)
-
+watermelonX = OneHotEncoder(categorical_features=[0, 1, 2, 3, 4, 5], sparse=False).fit_transform(watermelonCharactor)
+print(watermelonX)
 #选择样本输出
 watermelonOutput = data[['好瓜']].values
 watermelonOutput[:, 0] = dataTransfor.fit_transform(watermelonOutput[:, 0])
