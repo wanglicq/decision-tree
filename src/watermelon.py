@@ -53,4 +53,4 @@ print("MSE",metrics.mean_squared_error(y_test, y_pred))
 # 可视化决策树
 dot_data = tree.export_graphviz(clf, out_file=None)
 graph = graphviz.Source(dot_data)
-graph.render('waterMelon', '../docs/watermelon')
+graph.render('waterMelon_v2', '../docs/watermelon')
